@@ -1,6 +1,6 @@
 {
   "name": "arsyun-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -13,7 +13,7 @@
   "author": "Daniel Hu",
   "license": "ISC",
   "engines": {
-    "node": ">=8.9"
+    "node": ">=10"
   },
   "dependencies": {
     "chalk": "^4.1.1",
