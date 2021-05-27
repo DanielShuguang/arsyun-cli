@@ -26,7 +26,7 @@ function checkNodeVersion(wanted, id) {
 
 checkNodeVersion(packageJson.engines.node, 'arsyun-cli')
 
-if (semver.satisfies(process.version, '9.x')) {
+if (semver.satisfies(process.version, '10.x')) {
   console.log(
     chalk.red(
       `你使用的Node版本是 ${process.version}.\n` + `强烈建议你使用最新LTS版本`
