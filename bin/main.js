@@ -5,7 +5,7 @@ const chalk = require('chalk')
 const semver = require('semver')
 const program = require('commander')
 const packageJson = require('../package.json')
-const { templateInit } = require('../lib/tempCreator')
+const { templateInit, createOptionsHandler } = require('../lib/tempCreator')
 
 /**
  * 检测 node 版本函数
@@ -22,17 +22,17 @@ function checkNodeVersion(wanted, id) {
     )
     process.exit(1)
   }
+
+  if (semver.satisfies(process.version, '10.x')) {
+    console.log(
+      chalk.red(
+        `你使用的Node版本是 ${process.version}.\n` + `强烈建议你使用最新LTS版本`
+      )
+    )
+  }
 }
 
 checkNodeVersion(packageJson.engines.node, 'arsyun-cli')
-
-if (semver.satisfies(process.version, '10.x')) {
-  console.log(
-    chalk.red(
-      `你使用的Node版本是 ${process.version}.\n` + `强烈建议你使用最新LTS版本`
-    )
-  )
-}
 
 // 开始处理命令
 program.version(packageJson.version, '-v, --version')
@@ -43,7 +43,11 @@ program
   .description('create a new project')
   .option('--template <presetName>', '使用对应web模板')
   .action((name, cmd) => {
-    templateInit(name, cmd)
+    if (cmd.template) {
+      templateInit(name, cmd.template)
+    } else {
+      createOptionsHandler(name)
+    }
   })
 
 program.parse(process.argv)
