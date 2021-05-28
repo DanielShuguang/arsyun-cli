@@ -1,6 +1,6 @@
 {
   "name": "arsyun-cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "先河前端脚手架",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,12 @@
   },
   "keywords": [],
   "author": "Daniel Hu",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielShuguang/arsyun-cli.git"
+  },
+  "homepage": "https://github.com/DanielShuguang/arsyun-cli#readme",
   "engines": {
     "node": ">=10"
   },
