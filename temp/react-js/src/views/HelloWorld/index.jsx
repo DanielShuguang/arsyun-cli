@@ -1,13 +1,13 @@
 import './style.less'
 
 import { Button } from 'antd'
-import { useObserver, observer } from 'mobx-react'
+import { observer } from 'mobx-react'
 import React from 'react'
 
 import baseStore from '@/store'
 
 const HelloWorld = observer(() => {
-  const baseState = useObserver(() => baseStore)
+  const [baseState] = React.useState(() => baseStore)
 
   return (
     <div className="hello-world">
