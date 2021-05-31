@@ -1,12 +1,12 @@
-import './style.scss'
+import './style.less'
 
 import { Button } from 'antd'
-import { useObserver } from 'mobx-react'
+import { observer, useObserver } from 'mobx-react'
 import React from 'react'
 
 import baseStore from '@/store'
 
-const HelloWorld: React.FC = () => {
+const HelloWorld: React.FC = observer(() => {
   const baseState = useObserver(() => baseStore)
 
   return (
@@ -21,6 +21,6 @@ const HelloWorld: React.FC = () => {
       </Button>
     </div>
   )
-}
+})
 
 export default HelloWorld

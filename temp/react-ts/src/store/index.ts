@@ -7,11 +7,11 @@ class BaseStore {
     makeAutoObservable(this)
   }
 
-  increment() {
+  increment = () => {
     this.count++
   }
-  
-  decrement() {
+
+  decrement = () => {
     this.count--
   }
 }

@@ -12,7 +12,12 @@ const isProduction = process.env.NODE_ENV === 'production'
 export default defineConfig({
   base: isProduction ? './' : '',
   css: {
-    preprocessorOptions: {}
+    preprocessorOptions: {
+      less: {
+        modifyVars: {},
+        javascriptEnabled: true
+      }
+    }
   },
   server: {
     open: true,

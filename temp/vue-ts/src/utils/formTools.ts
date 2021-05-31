@@ -67,6 +67,6 @@ export function downloadFile(data: BlobPart, fileName: string, suffix: string) {
  * 筛选返回数据中的分页信息
  * @param obj
  */
-export function pagerSetter<T extends Utils.IPageVO>(obj: T) {
+export function pagerSetter<T extends Utils.PageVO>(obj: T) {
   return pick(obj, ['page', 'page_size', 'total'])
 }

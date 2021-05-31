@@ -4,7 +4,7 @@ declare namespace Utils {
   type Dict<T = any> = Record<string, T>
 
   /** 分页器 */
-  interface IPageVO {
+  interface PageVO {
     page: number
     page_size: number
     total: number
@@ -16,7 +16,7 @@ declare namespace Utils {
   }
 
   /** 响应体 */
-  interface IResult<T = null> {
+  interface Result<T = null> {
     code: number // 0 为成功，否则为失败
     description: string // 错误信息
     data: T | null
@@ -35,6 +35,8 @@ declare namespace Utils {
     dataIndex: T extends string ? T : keyof T
     width?: number | string
   }
+
+  type Key = string | number
 }
 
 declare namespace NodeJS {

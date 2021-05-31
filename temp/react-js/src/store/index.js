@@ -3,15 +3,15 @@ import { makeAutoObservable } from 'mobx'
 class BaseStore {
   constructor() {
     this.count = 0
-    
+
     makeAutoObservable(this)
   }
 
-  increment() {
+  increment = () => {
     this.count++
   }
 
-  decrement() {
+  decrement = () => {
     this.count--
   }
 }
