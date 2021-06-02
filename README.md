@@ -6,6 +6,12 @@
 
 后续功能正在开发中...
 
+## 安装
+
+```sh
+  npm install arsyun-cli -g
+```
+
 ## 使用
 
 ```sh
