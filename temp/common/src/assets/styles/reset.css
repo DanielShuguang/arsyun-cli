@@ -83,7 +83,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 16px;
   font: inherit;
   font-family: MicrosoftYaHei, PingFangSC-Regular, PingFang SC;
   vertical-align: baseline;
@@ -101,6 +100,10 @@ menu,
 nav,
 section {
   display: block;
+}
+html,
+body {
+  font-size: 16px;
 }
 body {
   line-height: 1;

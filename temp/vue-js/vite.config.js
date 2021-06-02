@@ -45,7 +45,7 @@ export default defineConfig({
           libraryName: 'ant-design-vue',
           esModule: true,
           resolveStyle: name => {
-            return `ant-design-vue/es/${name}/style/index.css`
+            return `ant-design-vue/es/${name}/style/index`
           }
         }
       ]

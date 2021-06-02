@@ -45,7 +45,7 @@ export default defineConfig({
           libraryName: 'antd',
           esModule: true,
           resolveStyle: name => {
-            return `antd/es/${name}/style/index.css`
+            return `antd/es/${name}/style/index`
           }
         }
       ]
