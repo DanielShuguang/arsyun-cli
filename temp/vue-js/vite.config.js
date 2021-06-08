@@ -34,7 +34,8 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'build'
+    outDir: 'build',
+    brotliSize: false
   },
   plugins: [
     vue(),
