@@ -4,10 +4,11 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'standard'
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',
     ecmaFeatures: { jsx: true },
     ecmaVersion: 2020,
     sourceType: 'module'
@@ -18,9 +19,13 @@ module.exports = {
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/jsx-key': 'off',
+    'space-before-function-paren': 'off',
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-types': 'off',
+    camelcase: 'off',
+    'no-undef': 'off',
+    'no-use-before-define': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react-hooks/rules-of-hooks': 'error', // 检查 Hook 的规则
     'react-hooks/exhaustive-deps': 'warn' // 检查 effect 的依赖
