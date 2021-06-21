@@ -11,7 +11,9 @@ module.exports = {
   rules: {
     'camelcase': 'off',
     'no-undef': 'off',
+    'no-unused-vars': 'off',
     'no-use-before-define': 'off',
+    'prefer-promise-reject-errors': 'off',
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',

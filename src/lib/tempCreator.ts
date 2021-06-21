@@ -1,10 +1,11 @@
-const fs = require('fs')
-const path = require('path')
-const nunjucks = require('nunjucks')
-const chalk = require('chalk')
-const cp = require('child_process')
-const inquirer = require('inquirer')
-const { downloadDeps, deleteFolderRecursive } = require('./tempDeps')
+import chalk from 'chalk'
+import cp from 'child_process'
+import fs from 'fs'
+import inquirer from 'inquirer'
+import nunjucks from 'nunjucks'
+import path from 'path'
+
+import { deleteFolderRecursive, downloadDeps } from './tempDeps'
 
 const currentPath = process.cwd()
 const binaryFilesRex = /\.(png|jpg|gif|jpeg|webp|ico|mp4)$/
@@ -13,11 +14,11 @@ let appTemplate = 'vue-js'
 
 /**
  * 初始化项目信息
- * @param {string} appName
- * @param {string} template
+ * @param appName
+ * @param template
  */
-async function templateInit(appName, template) {
-  const rootPath = path.join(__dirname, `../temp/${template}`)
+async function templateInit(appName: string, template: string) {
+  const rootPath = path.join(__dirname, `../../temp/${template}`)
   appTemplate = template
   appType = getCurrentAppType(template)
 
@@ -33,9 +34,9 @@ async function templateInit(appName, template) {
 
 /**
  * 启动文件后缀名确认
- * @param {string} template
+ * @param template
  */
-function getCurrentAppType(template) {
+function getCurrentAppType(template: any) {
   switch (template) {
     case 'vue-ts':
       return 'ts'
@@ -52,11 +53,11 @@ function getCurrentAppType(template) {
 
 /**
  * 创建文件夹
- * @param {string} sourceDir
- * @param {string} appName
- * @param {string} dirName
+ * @param sourceDir
+ * @param appName
+ * @param dirName
  */
-function createDir(sourceDir, appName, dirName) {
+function createDir(sourceDir: string, appName: any, dirName: string) {
   const targetDir = fs.readdirSync(sourceDir)
 
   targetDir.forEach(fileName => {
@@ -92,11 +93,15 @@ function createDir(sourceDir, appName, dirName) {
 
 /**
  * 创建文件
- * @param {string} fileName
- * @param {string | Buffer} data
- * @param {string} dirName
+ * @param fileName
+ * @param data
+ * @param dirName
  */
-function createFile(fileName, data, dirName) {
+function createFile(
+  fileName: string,
+  data: string | Buffer | NodeJS.ArrayBufferView,
+  dirName: string
+) {
   const filePath = path.join(dirName, fileName)
   try {
     fs.writeFileSync(filePath, data)
@@ -108,9 +113,9 @@ function createFile(fileName, data, dirName) {
 
 /**
  * 判断是否为文件
- * @param {string} dirPath
+ * @param dirPath
  */
-function isFile(dirPath) {
+function isFile(dirPath: number | fs.PathLike) {
   try {
     fs.readFileSync(dirPath)
     return true
@@ -121,9 +126,9 @@ function isFile(dirPath) {
 
 /**
  * 生存公共文件
- * @param {string} appName
+ * @param appName
  */
-function createCommonFiles(appName) {
+function createCommonFiles(appName: string) {
   const appPath = path.join(currentPath, appName)
   const commonPath = path.join(__dirname, '../temp/common')
   createDir(commonPath, appName, appPath)
@@ -131,13 +136,17 @@ function createCommonFiles(appName) {
 
 /**
  * 开始下载依赖
- * @param {string} targetDirPath
- * @param {string} appName
- * @param {string} template
+ * @param targetDirPath
+ * @param appName
+ * @param template
  */
-async function installDependencies(targetDirPath, appName, template) {
+function installDependencies(
+  targetDirPath: string,
+  appName: string,
+  template: string
+) {
   const useYarn = isYarnInstalled()
-  await downloadDeps(useYarn, template, targetDirPath)
+  downloadDeps(useYarn, template, targetDirPath)
   console.log(
     chalk.gray(`
       1.进入文件夹:\t cd ${appName}
@@ -159,9 +168,9 @@ function isYarnInstalled() {
 
 /**
  * 检查本地是否存在同名文件夹
- * @param {string} appName
+ * @param appName
  */
-async function checkDirNameUseful(appName) {
+async function checkDirNameUseful(appName: string) {
   try {
     const targetDirPath = path.join(currentPath, appName)
     const isExist = fs.existsSync(targetDirPath)
@@ -185,9 +194,9 @@ async function checkDirNameUseful(appName) {
 
 /**
  * 没有设置 template 时手动选择
- * @param {string} name
+ * @param name
  */
-async function createOptionsHandler(name) {
+async function createOptionsHandler(name: string) {
   try {
     await checkDirNameUseful(name)
     const answers = await inquirer.prompt([
@@ -205,7 +214,4 @@ async function createOptionsHandler(name) {
   }
 }
 
-module.exports = {
-  templateInit,
-  createOptionsHandler
-}
+export { templateInit, createOptionsHandler }
