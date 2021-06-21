@@ -3,10 +3,10 @@ interface EnvConfig {
   mockApi: string
 }
 
-const env = process.env.NODE_ENV || 'production'
+const env = import.meta.env.MODE || 'production'
 const BASE_URL = '/api'
 
-const envConfigs: Record<NodeJS.ProcessEnv['NODE_ENV'], EnvConfig> = {
+const envConfigs: Record<ImportMetaEnv['MODE'], EnvConfig> = {
   development: {
     baseApi: BASE_URL,
     mockApi: ''

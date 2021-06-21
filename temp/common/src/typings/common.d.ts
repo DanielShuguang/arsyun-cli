@@ -22,26 +22,5 @@ declare namespace Utils {
     data: T | null
   }
 
-  type ActionType<T> = {
-    type: string
-    payload: T
-  }
-
   type NoPager<T extends SearchVO> = Omit<T, keyof SearchVO>
-
-  /** 表格的 column 类型约束 */
-  interface ColumnField<T = string> {
-    title: string
-    dataIndex: T extends string ? T : keyof T
-    width?: number | string
-  }
-
-  type Key = string | number
-}
-
-declare namespace NodeJS {
-  interface ProcessEnv {
-    readonly NODE_ENV: 'development' | 'production' | 'test'
-    readonly PUBLIC_URL: string
-  }
 }

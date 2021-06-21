@@ -1,6 +1,6 @@
 {
   "name": "arsyun-cli",
-  "version": "1.0.30",
+  "version": "1.1.1",
   "description": "先河前端脚手架",
   "main": "index.js",
   "bin": {

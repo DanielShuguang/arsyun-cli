@@ -62,6 +62,10 @@ function createDir(sourceDir: string, appName: any, dirName: string) {
 
   targetDir.forEach(fileName => {
     const sourceFilePath = path.join(sourceDir, fileName)
+    // 不使用 ts 时忽略公共的 ts 文件及文件夹
+    if (!appTemplate.includes('ts') && /(\.ts$|typings)/.test(fileName)) {
+      return
+    }
 
     if (isFile(sourceFilePath)) {
       // 文件
@@ -125,7 +129,7 @@ function isFile(dirPath: number | fs.PathLike) {
 }
 
 /**
- * 生存公共文件
+ * 生成公共文件
  * @param appName
  */
 function createCommonFiles(appName: string) {
