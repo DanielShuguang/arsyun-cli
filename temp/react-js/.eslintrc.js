@@ -12,7 +12,6 @@ module.exports = {
   rules: {
     'react/display-name': 'off',
     'react/prop-types': 'off',
-    'react/jsx-key': 'off',
     'prefer-promise-reject-errors': 'off',
     'space-before-function-paren': 'off',
     'react-hooks/rules-of-hooks': 'error', // 检查 Hook 的规则

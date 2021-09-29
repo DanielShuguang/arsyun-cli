@@ -9,7 +9,8 @@ const cmdConfig = (
 ): cp.SpawnSyncOptionsWithBufferEncoding => ({
   env: process.env,
   cwd: targetDirPath,
-  shell: true
+  shell: true,
+  stdio: 'inherit'
 })
 
 /**
@@ -33,7 +34,7 @@ function downloadDeps(useYarn: boolean, template: string, appDir: string) {
   const tsRex = /(@types|typescript|vue-tsc)/
   if (!useTypescript) {
     actions = actions.filter(cmd => !tsRex.test(cmd))
-    devActions = devActions.filter(cmd => !tsRex.test(cmd))
+    devActions = devActions.filter(cmd => !tsRex.test(cmd) && cmd !== 'vite-react-jsx')
   }
 
   try {

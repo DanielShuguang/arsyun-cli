@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react'
-import React from 'react'
+import { FC } from 'react'
 
 import Layout from './components/Layout'
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <div className="App">
       <Layout />

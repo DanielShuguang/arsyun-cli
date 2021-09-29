@@ -28,6 +28,10 @@ export default defineConfig({
       }
     }
   },
+  esbuild: {
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment'
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')

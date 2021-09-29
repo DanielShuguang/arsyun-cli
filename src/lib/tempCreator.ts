@@ -18,11 +18,11 @@ let appTemplate = 'vue-js'
  * @param template
  */
 async function templateInit(appName: string, template: string) {
-  const rootPath = path.join(__dirname, `../../temp/${template}`)
+  const rootPath = path.resolve(__dirname, `../../temp/${template}`)
   appTemplate = template
   appType = getCurrentAppType(template)
 
-  const targetDirPath = path.join(currentPath, appName)
+  const targetDirPath = path.resolve(currentPath, appName)
   await checkDirNameUseful(appName)
   fs.mkdirSync(targetDirPath)
   console.log(chalk.green(`正在创建${template}项目...`))
@@ -106,13 +106,17 @@ function createFile(
   data: string | Buffer | NodeJS.ArrayBufferView,
   dirName: string
 ) {
-  const filePath = path.join(dirName, fileName)
+  const filePath = path.join(dirName, getCorrectFileName(fileName))
   try {
     fs.writeFileSync(filePath, data)
     console.log(chalk.green(`创建: ${fileName}`))
   } catch (err) {
     console.log(chalk.red(`创建${fileName}失败：${err}`))
   }
+}
+
+function getCorrectFileName(fileName: string) {
+  return fileName.includes('gitignore') ? '.gitignore' : fileName
 }
 
 /**
@@ -134,7 +138,7 @@ function isFile(dirPath: number | fs.PathLike) {
  */
 function createCommonFiles(appName: string) {
   const appPath = path.join(currentPath, appName)
-  const commonPath = path.join(__dirname, '../temp/common')
+  const commonPath = path.join(__dirname, '../../temp/common')
   createDir(commonPath, appName, appPath)
 }
 

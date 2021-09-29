@@ -1,13 +1,13 @@
-import React from 'react'
+import { FC, memo, Suspense } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 
 import routes from '@/router'
 
-const Layout: React.FC = React.memo(() => {
+const Layout: FC = memo(() => {
   return (
     <HashRouter>
       <Switch>
-        <React.Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<div>loading...</div>}>
           {routes.map(route => {
             const { component: C, exact, path } = route
             return (
@@ -19,7 +19,7 @@ const Layout: React.FC = React.memo(() => {
               />
             )
           })}
-        </React.Suspense>
+        </Suspense>
       </Switch>
     </HashRouter>
   )

@@ -41,7 +41,8 @@ const reactDeps = {
     '@typescript-eslint/parser',
     '@vitejs/plugin-react-refresh',
     'eslint-plugin-react',
-    'eslint-plugin-react-hooks'
+    'eslint-plugin-react-hooks',
+    'vite-react-jsx'
   ]
 }
 
