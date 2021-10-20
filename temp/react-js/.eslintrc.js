@@ -6,16 +6,18 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 12,
-    sourceType: 'module'
+    sourceType: 'module',
+    requireConfigFile: false
   },
   plugins: ['react', 'react-hooks'],
   rules: {
     'react/display-name': 'off',
     'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
     'prefer-promise-reject-errors': 'off',
     'space-before-function-paren': 'off',
     'react-hooks/rules-of-hooks': 'error', // 检查 Hook 的规则
     'react-hooks/exhaustive-deps': 'warn', // 检查 effect 的依赖
-    'camelcase': 'off'
+    camelcase: 'off'
   }
 }

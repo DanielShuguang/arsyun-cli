@@ -13,11 +13,7 @@ const vueDeps = {
     '@vue/compiler-sfc',
     '@vue/eslint-config-standard',
     '@vue/eslint-config-typescript',
-    'eslint-plugin-import',
     'eslint-plugin-vue',
-    'eslint-plugin-node',
-    'eslint-plugin-promise',
-    'eslint-plugin-standard',
     'vue-tsc'
   ]
 }
@@ -30,8 +26,7 @@ const reactDeps = {
     'react-dom',
     'react-redux',
     'react-router-dom',
-    'mobx-react',
-    'mobx'
+    '@reduxjs/toolkit'
   ],
   devDeps: [
     '@types/react',
@@ -42,7 +37,8 @@ const reactDeps = {
     '@vitejs/plugin-react-refresh',
     'eslint-plugin-react',
     'eslint-plugin-react-hooks',
-    'vite-react-jsx'
+    'vite-react-jsx',
+    '@types/react-redux'
   ]
 }
 
@@ -59,7 +55,11 @@ const commonDeps = {
     'typescript',
     'vite',
     'vite-plugin-compression',
-    'vite-plugin-style-import'
+    'vite-plugin-style-import',
+    'eslint-plugin-import',
+    'eslint-plugin-node',
+    'eslint-plugin-promise',
+    'eslint-plugin-standard'
   ]
 }
 

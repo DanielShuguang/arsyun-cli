@@ -34,12 +34,14 @@ function downloadDeps(useYarn: boolean, template: string, appDir: string) {
   const tsRex = /(@types|typescript|vue-tsc)/
   if (!useTypescript) {
     actions = actions.filter(cmd => !tsRex.test(cmd))
-    devActions = devActions.filter(cmd => !tsRex.test(cmd) && cmd !== 'vite-react-jsx')
+    devActions = devActions.filter(cmd => !tsRex.test(cmd))
   }
 
   try {
     cp.spawnSync(npmCmd, devActions, cmdConfig(appDir))
     cp.spawnSync(npmCmd, actions, cmdConfig(appDir))
+    cp.spawnSync('npx', ['husky-init'], cmdConfig(appDir))
+    cp.spawnSync(npmCmd, ['install'], cmdConfig(appDir))
   } catch (error) {
     console.log(chalk.red(error))
     deleteFolderRecursive(appDir)

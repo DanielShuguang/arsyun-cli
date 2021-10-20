@@ -2,6 +2,7 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import viteCompression from 'vite-plugin-compression'
 import styleImport from 'vite-plugin-style-import'
+import reactJsx from 'vite-react-jsx'
 
 import reactRefresh from '@vitejs/plugin-react-refresh'
 
@@ -39,6 +40,7 @@ export default defineConfig({
   },
   plugins: [
     reactRefresh(),
+    reactJsx(),
     viteCompression(),
     styleImport({
       libs: [
