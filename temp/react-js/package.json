@@ -5,10 +5,10 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint \"src/**/*.{ts,js,tsx,jsx}\" --fix"
+    "lint": "eslint \"src/**/*.{ts,js,tsx,jsx}\" --fix",
+    "prettier": "prettier ./src -w",
+    "prepare": "husky install"
   },
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

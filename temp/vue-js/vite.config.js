@@ -4,6 +4,7 @@ import viteCompression from 'vite-plugin-compression'
 import styleImport from 'vite-plugin-style-import'
 
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 const url = ''
 const isProduction = process.env.NODE_ENV === 'production'
@@ -43,6 +44,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    vueJsx(),
     viteCompression(),
     styleImport({
       libs: [

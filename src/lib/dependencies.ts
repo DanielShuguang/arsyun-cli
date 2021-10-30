@@ -2,7 +2,7 @@ const vueDeps = {
   deps: [
     'vue@next',
     'vue-router@next',
-    'vuex@next',
+    'pinia@next',
     'ant-design-vue@next',
     '@vueuse/core'
   ],
@@ -14,7 +14,8 @@ const vueDeps = {
     '@vue/eslint-config-standard',
     '@vue/eslint-config-typescript',
     'eslint-plugin-vue',
-    'vue-tsc'
+    'vue-tsc',
+    '@vitejs/plugin-vue-jsx'
   ]
 }
 
@@ -43,17 +44,21 @@ const reactDeps = {
 }
 
 const commonDeps = {
-  dep: ['lodash-es', 'axios', 'js-cookie'],
+  dep: ['lodash-es', 'axios', 'js-cookie', 'nprogress', 'js-base64'],
   devDep: [
     '@babel/eslint-parser',
     '@types/lodash-es',
     '@types/node',
     '@types/js-cookie',
+    '@types/nprogress',
+    '@types/js-base64',
+    'prettier',
     'babel-eslint',
     'eslint',
     'less',
     'typescript',
     'vite',
+    'husky',
     'vite-plugin-compression',
     'vite-plugin-style-import',
     'eslint-plugin-import',

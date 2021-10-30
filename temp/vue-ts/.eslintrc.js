@@ -9,7 +9,7 @@ module.exports = {
   parserOptions: { ecmaVersion: 2020 },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    'camelcase': 'off',
+    camelcase: 'off',
     'no-undef': 'off',
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',

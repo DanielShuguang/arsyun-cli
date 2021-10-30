@@ -5,10 +5,10 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "lint": "eslint \"src/**/*.{ts,js,tsx,jsx,vue}\" --fix"
+    "lint": "eslint \"src/**/*.{ts,js,tsx,jsx,vue}\" --fix",
+    "prettier": "prettier ./src -w",
+    "prepare": "husky install"
   },
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

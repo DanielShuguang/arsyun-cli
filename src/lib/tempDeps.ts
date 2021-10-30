@@ -40,8 +40,8 @@ function downloadDeps(useYarn: boolean, template: string, appDir: string) {
   try {
     cp.spawnSync(npmCmd, devActions, cmdConfig(appDir))
     cp.spawnSync(npmCmd, actions, cmdConfig(appDir))
-    cp.spawnSync('npx', ['husky-init'], cmdConfig(appDir))
-    cp.spawnSync(npmCmd, ['install'], cmdConfig(appDir))
+    cp.spawnSync('git', ['init'], cmdConfig(appDir))
+    cp.spawnSync(npmCmd, ['prepare'], cmdConfig(appDir))
   } catch (error) {
     console.log(chalk.red(error))
     deleteFolderRecursive(appDir)
