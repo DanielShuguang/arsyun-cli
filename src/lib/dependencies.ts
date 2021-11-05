@@ -53,7 +53,6 @@ const commonDeps = {
     '@types/nprogress',
     '@types/js-base64',
     'prettier',
-    'babel-eslint',
     'eslint',
     'less',
     'typescript',
@@ -63,8 +62,7 @@ const commonDeps = {
     'vite-plugin-style-import',
     'eslint-plugin-import',
     'eslint-plugin-node',
-    'eslint-plugin-promise',
-    'eslint-plugin-standard'
+    'eslint-plugin-promise'
   ]
 }
 

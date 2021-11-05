@@ -10,6 +10,7 @@ module.exports = {
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     camelcase: 'off',
+    'no-tabs': 'off',
     'no-undef': 'off',
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
