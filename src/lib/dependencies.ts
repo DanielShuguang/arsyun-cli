@@ -51,7 +51,6 @@ const commonDeps = {
     '@types/node',
     '@types/js-cookie',
     '@types/nprogress',
-    '@types/js-base64',
     'prettier',
     'eslint',
     'less',
