@@ -1,11 +1,5 @@
 const vueDeps = {
-  deps: [
-    'vue@next',
-    'vue-router@next',
-    'pinia@next',
-    'ant-design-vue@next',
-    '@vueuse/core'
-  ],
+  deps: ['vue@next', 'vue-router@next', 'pinia@next', 'ant-design-vue@next', '@vueuse/core'],
   devDeps: [
     '@typescript-eslint/eslint-plugin',
     '@typescript-eslint/parser',
@@ -27,7 +21,8 @@ const reactDeps = {
     'react-dom',
     'react-redux',
     'react-router-dom',
-    '@reduxjs/toolkit'
+    'mobx',
+    'mobx-react'
   ],
   devDeps: [
     '@types/react',
