@@ -9,8 +9,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "types": [
-      "vite/client",
-      "node"
+      "vite/client"
     ],
     "lib": [
       "esnext",
