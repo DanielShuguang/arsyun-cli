@@ -43,7 +43,6 @@ const commonDeps = {
   devDep: [
     '@babel/eslint-parser',
     '@types/lodash-es',
-    '@types/node',
     '@types/js-cookie',
     '@types/nprogress',
     'prettier',
