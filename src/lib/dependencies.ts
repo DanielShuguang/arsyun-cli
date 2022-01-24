@@ -1,14 +1,18 @@
 const vueDeps = {
   deps: ['vue@next', 'vue-router@next', 'pinia@next', 'ant-design-vue@next', '@vueuse/core'],
   devDeps: [
+    '@rushstack/eslint-patch',
     '@typescript-eslint/eslint-plugin',
     '@typescript-eslint/parser',
     '@vitejs/plugin-vue',
+    '@vue/test-utils',
     '@vue/compiler-sfc',
     '@vue/eslint-config-standard',
     '@vue/eslint-config-typescript',
     'eslint-plugin-vue',
     'vue-tsc',
+    'jsdom',
+    'vitest',
     '@vitejs/plugin-vue-jsx'
   ]
 }

@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint \"src/**/*.{ts,js,tsx,jsx,vue}\" --fix",
+    "test:unit": "vitest --environment jsdom",
+    "lint": "eslint ./src --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "prettier": "prettier ./src -w",
     "prepare": "husky install"
   },
