@@ -21,6 +21,10 @@
   "engines": {
     "node": ">=10"
   },
+  "files": [
+    "/bin",
+    "/temp"
+  ],
   "dependencies": {
     "@types/inquirer": "^7.3.2",
     "@types/node": "^15.12.4",
