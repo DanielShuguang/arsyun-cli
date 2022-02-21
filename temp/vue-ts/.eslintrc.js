@@ -1,10 +1,14 @@
+/* eslint-env node */
+require('@rushstack/eslint-patch/modern-module-resolution')
+
 module.exports = {
   root: true,
-  env: { node: true },
+  env: { node: true, 'vue/setup-compiler-macros': true },
   extends: [
     'plugin:vue/vue3-essential',
     '@vue/standard',
-    '@vue/typescript/recommended'
+    '@vue/typescript/recommended',
+    '@vue/eslint-config-prettier'
   ],
   parserOptions: { ecmaVersion: 2020 },
   plugins: ['vue', '@typescript-eslint'],
