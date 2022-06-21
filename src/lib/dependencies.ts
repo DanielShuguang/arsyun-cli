@@ -1,5 +1,5 @@
 const vueDeps = {
-  deps: ['vue@next', 'vue-router@next', 'pinia@next', 'ant-design-vue@next', '@vueuse/core'],
+  deps: ['vue', 'vue-router', 'pinia@next', 'ant-design-vue@next', '@vueuse/core'],
   devDeps: [
     '@rushstack/eslint-patch',
     '@typescript-eslint/eslint-plugin',
